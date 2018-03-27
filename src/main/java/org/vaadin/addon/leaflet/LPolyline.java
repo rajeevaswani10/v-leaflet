@@ -8,9 +8,9 @@ import org.vaadin.addon.leaflet.util.JTSUtil;
 import com.vividsolutions.jts.geom.Geometry;
 import com.vividsolutions.jts.geom.LineString;
 
-import java.util.Arrays;
 import java.util.List;
 
+@SuppressWarnings("serial")
 public class LPolyline extends AbstractLeafletVector {
 
     private PointArray points;
@@ -47,7 +47,7 @@ public class LPolyline extends AbstractLeafletVector {
     public void setPointsWithoutRepaint(Point...  points) {
         this.points = new PointArray(points);
     }
-    
+
     public Point[] getPoints() {
         return points.toArray(new Point[points.size()]);
     }
@@ -65,7 +65,7 @@ public class LPolyline extends AbstractLeafletVector {
     public void setGeometry(LineString lineString) {
         setPoints(JTSUtil.toLeafletPointArray(lineString));
     }
-    
+
     public void setGeometryWithoutRepaint(LineString lineString) {
         setPointsWithoutRepaint(JTSUtil.toLeafletPointArray(lineString));
     }

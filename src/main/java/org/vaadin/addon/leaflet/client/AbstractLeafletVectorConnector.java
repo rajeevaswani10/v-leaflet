@@ -103,7 +103,7 @@ public abstract class AbstractLeafletVectorConnector<T extends AbstractLeafletVe
 
 		return o;
 	}
-	
+
 	@Override
 	public void setParent(ServerConnector parent) {
 		super.setParent(parent);

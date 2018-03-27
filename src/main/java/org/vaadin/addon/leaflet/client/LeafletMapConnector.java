@@ -58,6 +58,7 @@ public class LeafletMapConnector extends AbstractHasComponentsConnector
 
     static {
         LeafletResourceInjector.ensureInjected();
+        PolylineDecoratorResInjector.ensureInjected();
     }
 
     LeafletMapServerRpc rpc = RpcProxy.create(LeafletMapServerRpc.class, this);
@@ -185,7 +186,7 @@ public class LeafletMapConnector extends AbstractHasComponentsConnector
                                     lazyTimer.schedule(getState().minLocateInterval);
                                 }
                             }
-                            
+
                             if (getState().updateLayersOnLocate != null) {
                                 for (Connector c : getState().updateLayersOnLocate) {
                                     tryUpdateConnector(c, event);
@@ -435,7 +436,7 @@ public class LeafletMapConnector extends AbstractHasComponentsConnector
             map.addMoveEndListener(moveEndListener);
 
             if (getState().width != null && !getState().width.contains("%")) {
-                // fixed size for the leaflet map, report size manually to the 
+                // fixed size for the leaflet map, report size manually to the
                 // server
                 reportViewPortToServer();
             }
