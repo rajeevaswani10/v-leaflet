@@ -1,7 +1,7 @@
 package org.vaadin.addon.leaflet;
 
 import org.vaadin.addon.leaflet.jsonmodels.PointArray;
-import org.vaadin.addon.leaflet.polylinedecorated.shared.LeafletPolylineDecoratedState;
+import org.vaadin.addon.leaflet.shared.LeafletPolylineDecoratedState;
 
 
 @SuppressWarnings("serial")

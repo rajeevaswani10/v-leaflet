@@ -472,7 +472,6 @@ L$1.PolylineDecorator = L$1.FeatureGroup.extend({
  * Allows compact syntax to be used
  */
 L$1.polylineDecorator = function (paths, options) {
-	console.log("m here flag - 1234567*******************");
     return new L$1.PolylineDecorator(paths, options);
 };
 

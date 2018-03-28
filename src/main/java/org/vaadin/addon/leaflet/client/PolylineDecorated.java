@@ -13,7 +13,6 @@ public class PolylineDecorated extends AbstractPath {
 
 	public static native AbstractPath createPattern(AbstractPath polyline)
 	/*-{
-	  	console.log("************ m in createpattern *******");
 		return $wnd.L.polylineDecorator(polyline, {
         	patterns: [
             	{offset: '75%', repeat: 0, symbol: $wnd.L.Symbol.arrowHead({pixelSize: 15, polygon: false, pathOptions: {stroke: true}})}

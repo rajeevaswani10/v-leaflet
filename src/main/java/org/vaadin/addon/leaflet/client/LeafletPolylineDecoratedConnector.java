@@ -13,7 +13,7 @@ import org.vaadin.addon.leaflet.shared.LeafletPolylineDecoratedState;
 
 @SuppressWarnings("serial")
 @Connect(org.vaadin.addon.leaflet.LPolylineDecorated.class)
-public class LeafletPolylineDecoratedConnector2
+public class LeafletPolylineDecoratedConnector
 		extends AbstractLeafletVectorConnector<LeafletPolylineDecoratedState, PolylineOptions> {
 
     static {
