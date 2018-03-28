@@ -13,7 +13,7 @@ import java.util.List;
 
 public class LPolyline extends AbstractLeafletVector {
 
-    private PointArray points;
+    protected PointArray points;
 
     @Override
     protected LeafletPolylineState getState() {
@@ -47,7 +47,7 @@ public class LPolyline extends AbstractLeafletVector {
     public void setPointsWithoutRepaint(Point...  points) {
         this.points = new PointArray(points);
     }
-    
+
     public Point[] getPoints() {
         return points.toArray(new Point[points.size()]);
     }
@@ -65,7 +65,7 @@ public class LPolyline extends AbstractLeafletVector {
     public void setGeometry(LineString lineString) {
         setPoints(JTSUtil.toLeafletPointArray(lineString));
     }
-    
+
     public void setGeometryWithoutRepaint(LineString lineString) {
         setPointsWithoutRepaint(JTSUtil.toLeafletPointArray(lineString));
     }

@@ -1,5 +1,8 @@
-package org.vaadin.addon.leaflet.client;
+package org.vaadin.addon.leaflet.polylinedecorated.client;
 
+import org.vaadin.addon.leaflet.client.AbstractLeafletLayerConnector;
+import org.vaadin.addon.leaflet.client.LeafletPopupConnector;
+import org.vaadin.addon.leaflet.client.LeafletTooltipConnector;
 import org.vaadin.addon.leaflet.shared.AbstractLeafletVectorState;
 import org.vaadin.addon.leaflet.shared.LeafletMarkerClientRpc;
 import com.google.gwt.core.client.JsonUtils;
@@ -10,10 +13,10 @@ import com.google.gwt.core.client.Scheduler;
 import com.google.gwt.core.client.Scheduler.ScheduledCommand;
 import com.vaadin.client.ServerConnector;
 
-public abstract class AbstractLeafletVectorConnector<T extends AbstractLeafletVectorState, O extends PathOptions>
+public abstract class AbstractLeafletVectorConnector2<T extends AbstractLeafletVectorState, O extends PathOptions>
 		extends AbstractLeafletLayerConnector<O> {
 
-	protected AbstractLeafletVectorConnector() {
+	protected AbstractLeafletVectorConnector2() {
 		registerRpc(LeafletMarkerClientRpc.class, new LeafletMarkerClientRpc() {
 
 			@Override
@@ -81,7 +84,7 @@ public abstract class AbstractLeafletVectorConnector<T extends AbstractLeafletVe
 				@Override
 				public void execute() {
 					getVector().bindTooltip(tooltip, LeafletTooltipConnector.tooltipOptionsFor(getState().tooltipState,
-							AbstractLeafletVectorConnector.this));
+							AbstractLeafletVectorConnector2.this));
 				}
 			});
 		}
@@ -95,7 +98,7 @@ public abstract class AbstractLeafletVectorConnector<T extends AbstractLeafletVe
 					getVector().bindPopup(
 							popup,
 							LeafletPopupConnector
-									.popupOptionsFor(getState().popupState, AbstractLeafletVectorConnector.this));
+									.popupOptionsFor(getState().popupState, AbstractLeafletVectorConnector2.this));
 				}
 			});
 

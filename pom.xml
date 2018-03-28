@@ -2,7 +2,7 @@
     <modelVersion>4.0.0</modelVersion>
     <groupId>org.vaadin.addon</groupId>
     <artifactId>v-leaflet</artifactId>
-    <version>2.0.6-SNAPSHOT</version>
+    <version>2.0.6.1</version>
     <name>V-Leaflet</name>
     <packaging>bundle</packaging>
 
@@ -51,7 +51,7 @@
                     <archive>
                         <manifest>
                             <addClasspath>true</addClasspath>
-                            <!-- Implementation-Title and Implementation-Version come from the 
+                            <!-- Implementation-Title and Implementation-Version come from the
                             POM by default -->
                             <addDefaultImplementationEntries>true</addDefaultImplementationEntries>
                         </manifest>
@@ -85,10 +85,10 @@
             </plugin>
 
 
-            <!-- This creates a zip file of jar and sources jar. When publishing in 
-            the Directory this makes sources available to maven users automatically. 
-            We could also use this to package required dependecies for those poor developer 
-            souls that still dont know how to use a build system that supports transient 
+            <!-- This creates a zip file of jar and sources jar. When publishing in
+            the Directory this makes sources available to maven users automatically.
+            We could also use this to package required dependecies for those poor developer
+            souls that still dont know how to use a build system that supports transient
             dependencies... -->
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
@@ -159,7 +159,7 @@
                     </execution>
                 </executions>
             </plugin>
-            
+
             <plugin>
                 <groupId>com.github.webdriverextensions</groupId>
                 <artifactId>webdriverextensions-maven-plugin</artifactId>
@@ -203,7 +203,7 @@
 
         <resources>
             <resource>
-                <!-- This add sources, .gwt.xml files etc to jar from source directory. 
+                <!-- This add sources, .gwt.xml files etc to jar from source directory.
                 Not quite maven convention byt easieast to setup this way. -->
                 <directory>src/main/java</directory>
             </resource>
@@ -238,7 +238,7 @@
                         <draftCompile>true</draftCompile>
                         <style>PRETTY</style>
                         <module>org.vaadin.addon.leaflet.Widgetset</module>
-                        <!-- If you do lots of e.g. plain css changes and don't wish to use 
+                        <!-- If you do lots of e.g. plain css changes and don't wish to use
                         hosted mode, you can force compile easily with uncommenting following rule -->
                         <!-- 						<force>true</force> -->
                         <strict>true</strict>
@@ -248,8 +248,8 @@
                     <artifactId>maven-surefire-plugin</artifactId>
                     <configuration>
                         <excludes>
-                            <!-- Files here might match to naming convetions, but the are just 
-                            vaadin apps containing you add-on components in varios setups. We can ignore 
+                            <!-- Files here might match to naming convetions, but the are just
+                            vaadin apps containing you add-on components in varios setups. We can ignore
                             them from test. -->
                             <exclude>**/demoandtestapp/*</exclude>
                         </excludes>
@@ -354,8 +354,9 @@
             <groupId>org.peimari</groupId>
             <artifactId>g-leaflet</artifactId>
             <version>1.0.12-SNAPSHOT</version>
-            <!-- Only needed during widgetset compilation, so provided scope would 
-            be great for this, but with it is left out from widgetset compilation by 
+            <!-- <version>1.0.12.1</version> -->
+            <!-- Only needed during widgetset compilation, so provided scope would
+            be great for this, but with it is left out from widgetset compilation by
             vaadin plugin -->
             <!-- <scope>provided</scope> -->
         </dependency>
