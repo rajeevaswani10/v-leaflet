@@ -8,12 +8,11 @@ import org.vaadin.addon.leaflet.util.JTSUtil;
 import com.vividsolutions.jts.geom.Geometry;
 import com.vividsolutions.jts.geom.LineString;
 
-import java.util.Arrays;
 import java.util.List;
 
 public class LPolyline extends AbstractLeafletVector {
 
-    protected PointArray points;
+    private PointArray points;
 
     @Override
     protected LeafletPolylineState getState() {

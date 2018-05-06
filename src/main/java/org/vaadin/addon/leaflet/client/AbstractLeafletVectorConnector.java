@@ -13,7 +13,7 @@ import com.vaadin.client.ServerConnector;
 public abstract class AbstractLeafletVectorConnector<T extends AbstractLeafletVectorState, O extends PathOptions>
 		extends AbstractLeafletLayerConnector<O> {
 
-	protected AbstractLeafletVectorConnector() {
+	public AbstractLeafletVectorConnector() {
 		registerRpc(LeafletMarkerClientRpc.class, new LeafletMarkerClientRpc() {
 
 			@Override
@@ -103,7 +103,7 @@ public abstract class AbstractLeafletVectorConnector<T extends AbstractLeafletVe
 
 		return o;
 	}
-
+	
 	@Override
 	public void setParent(ServerConnector parent) {
 		super.setParent(parent);
