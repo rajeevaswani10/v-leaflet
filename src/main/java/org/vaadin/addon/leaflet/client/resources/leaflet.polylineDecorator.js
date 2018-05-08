@@ -472,6 +472,7 @@ L$1.PolylineDecorator = L$1.FeatureGroup.extend({
  * Allows compact syntax to be used
  */
 L$1.polylineDecorator = function (paths, options) {
+	//console.log("creating polyline decorator");
     return new L$1.PolylineDecorator(paths, options);
 };
 

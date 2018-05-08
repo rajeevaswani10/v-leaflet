@@ -15,6 +15,7 @@ import com.vividsolutions.jts.geom.LineString;
 public class LPolylineDecorated extends AbstractLeafletVector {
 
     protected PointArray points;
+    protected LPolyline polyline;
 
     @Override
     public void beforeClientResponse(boolean initial) {
@@ -23,6 +24,7 @@ public class LPolylineDecorated extends AbstractLeafletVector {
     }
 
     public LPolylineDecorated(LPolyline line) {
+    	this.polyline = line;
     	setPoints(new PointArray(line.getPoints()));
     }
 
