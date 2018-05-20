@@ -11,11 +11,33 @@ public class PolylineDecorated extends AbstractPath {
 
 	protected PolylineDecorated() {}
 
-	public static native AbstractPath createPattern(AbstractPath polyline)
+	public static native AbstractPath createPattern(AbstractPath polyline, PolylineDecoratedOptions o)
 	/*-{
+		console.log("creating arrows -------------------------------------");
 		return $wnd.L.polylineDecorator(polyline, {
         	patterns: [
-            	{offset: '75%', repeat: 0, symbol: $wnd.L.Symbol.arrowHead({pixelSize: 15, polygon: false, pathOptions: {stroke: true}})}
+            	{
+            		offset: '25%',
+            		repeat: 0, symbol: $wnd.L.Symbol.arrowHead({
+            									pixelSize: 15,
+            									polygon: false,
+            									pathOptions: {
+            										stroke: true ,
+            										color: o.color
+            									}
+            				})
+            	},
+            	{
+            		offset: '75%',
+            		repeat: 0, symbol: $wnd.L.Symbol.arrowHead({
+            									pixelSize: 15,
+            									polygon: false,
+            									pathOptions: {
+            										stroke: true ,
+            										color: o.color
+            									}
+            				})
+            	}
         	]
     	});
 	}-*/;

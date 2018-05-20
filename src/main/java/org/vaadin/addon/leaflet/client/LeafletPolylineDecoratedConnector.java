@@ -12,9 +12,9 @@ import org.peimari.gleaflet.client.PolylineOptions;
 import org.vaadin.addon.leaflet.shared.LeafletPolylineDecoratedState;
 
 @SuppressWarnings("serial")
-@Connect(org.vaadin.addon.leaflet.LPolylineDecorated.class)
+@Connect(org.vaadin.addon.leaflet.PolylineDecoration.class)
 public class LeafletPolylineDecoratedConnector
-		extends AbstractLeafletVectorConnector<LeafletPolylineDecoratedState, PolylineOptions> {
+		extends AbstractLeafletVectorConnector<LeafletPolylineDecoratedState, PolylineDecoratedOptions> {
 
     static {
         PolylineDecoratorResInjector.ensureInjected();
@@ -31,8 +31,9 @@ public class LeafletPolylineDecoratedConnector
 			return;
 		}
 
-		AbstractPath line = createVector(createOptions());
-		pattern = createPattern(line);
+		PolylineDecoratedOptions o = createOptions();
+		AbstractPath line = createVector(o);
+		pattern = createPattern(line , o);
 		addToParent(pattern);
 	}
 
@@ -41,8 +42,15 @@ public class LeafletPolylineDecoratedConnector
 		return pattern;
 	}
 
-	protected AbstractPath createPattern(AbstractPath polyline) {
-		return PolylineDecorated.createPattern(polyline);
+	@Override
+	protected PolylineDecoratedOptions createOptions() {
+		PolylineDecoratedOptions options = super.createOptions();
+		options.setColor(getState().color);
+		return options;
+	}
+
+	protected AbstractPath createPattern(AbstractPath polyline, PolylineDecoratedOptions o) {
+		return PolylineDecorated.createPattern(polyline, o);
 	}
 
 	@Override
@@ -51,7 +59,7 @@ public class LeafletPolylineDecoratedConnector
 		markDirty();
 	}
 
-	protected AbstractPath createVector(PolylineOptions options) {
+	protected AbstractPath createVector(PolylineDecoratedOptions options) {
 		return Polyline.createWithArray(getCoordinatesArray(), options);
 	}
 

@@ -67,7 +67,7 @@ public class LeafletPolylineConnector extends
                 }
             });
         }
-        
+
         if (hasEventListener(EventId.CONTEXTMENU)) {
             marker.addContextMenuListener(new ContextMenuListener() {
                 @Override
